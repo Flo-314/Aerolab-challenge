@@ -1,9 +1,12 @@
-import {Flex, Box, Image, Text} from "@chakra-ui/react";
+import {Flex, Box, Image, Text, Button} from "@chakra-ui/react";
+import {useState} from "react";
 
 import logo from "../../UI Assets/assets/icons/aerolab-logo-1.svg";
 import aeroPay from "../../UI Assets/assets/icons/aeropay-1.svg";
 import chevronIcon from "../../UI Assets/assets/icons/chevron-default.svg";
 function Header() {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
   return (
     <header>
       <Box bg="gray" width={"100%"}>
@@ -36,7 +39,13 @@ function Header() {
             <Text bg="brand.default" bgClip={"text"}>
               10.000
             </Text>
-            <Image src={chevronIcon} transform={"rotate(270deg)"} />
+
+            <Image
+              cursor="pointer"
+              src={chevronIcon}
+              transform={"rotate(270deg)"}
+              onClick={() => {}}
+            />
           </Flex>
         </Flex>
       </Box>
