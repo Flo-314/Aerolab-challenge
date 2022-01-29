@@ -24,6 +24,7 @@ const theme = extendTheme({
       hover: "linear-gradient(102.47deg, #1667D9 -5.34%, #F279F2 106.58%)",
       light: "#E5F0FF",
       light2: "#CCE1FF",
+      blue: "#176FEB",
     },
     green: {
       default: "#29CC74",
