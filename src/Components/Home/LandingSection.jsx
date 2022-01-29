@@ -17,14 +17,15 @@ function LandingSection() {
           align="center"
           height={"100%"}
           justify="space-between"
+          justifyContent={{mobile: "center"}}
           margin="0 auto"
           maxWidth="1464px"
           paddingX="20px"
           paddingY="40px"
           width="100%"
         >
-          <Grid templateColumns={"1fr 1fr"} templateRows={"minmax(min-content, 400px)"}>
-            <GridItem>
+          <Grid templateColumns={{desktop: "1fr 1fr", mobile: "1fr"}}>
+            <GridItem textAlign={{mobile: "center", desktop: "left"}}>
               <Flex direction={"column"}>
                 <Text
                   color={"neutrals.600"}
@@ -63,26 +64,26 @@ function LandingSection() {
                   borderRadius={"24px"}
                   color={"neutrals.0"}
                   fontSize={{desktop: "text.Dl1", mobile: "text.Ml1"}}
-                  marginY={"48px"}
-                  padding={"30px"}
+                  paddingX="50"
+                  paddingY={"30px"}
                 >
                   View all products <Image src={icon} />
                 </Button>
               </Box>
             </GridItem>
 
-            <GridItem>
+            <GridItem display={{tablet: "none", desktop: "inherit", mobile: "none"}}>
               <Flex
                 bg="specials.illustrationBg"
                 borderRadius={"100px"}
-                transform={"scale(0.9, 0.8)"}
-                transformOrigin={"50% 15%"}
+                transform={{desktop: "scale(0.9, 0.8)"}}
+                transformOrigin={{desktop: "50% 15%"}}
               >
                 <Image
                   height="auto"
                   src={heroDesktop}
-                  transform="scale(1.3,1.4)"
-                  transformOrigin={"50% 100%"}
+                  transform={{desktop: "scale(1.3,1.4)"}}
+                  transformOrigin={{desktop: "50% 100%"}}
                 />
               </Flex>
             </GridItem>
