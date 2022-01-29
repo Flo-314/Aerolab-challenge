@@ -1,16 +1,8 @@
-import {Flex, Box, Image, Text, Button, Grid, GridItem, Heading, Container} from "@chakra-ui/react";
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-} from "@chakra-ui/react";
+import {Flex} from "@chakra-ui/react";
 
-import TopSection from "./TopSection";
+import BottomSection from "./components/BottomSection";
+import CardSection from "./components/CardsSection";
+import TopSection from "./components/TopSection";
 
 function ProductSection() {
   return (
@@ -21,10 +13,12 @@ function ProductSection() {
         height={"100%"}
         margin="0 auto"
         maxWidth="1464px"
-        paddingTop={{desktop: "40", tablet: "10", mobile: "5"}}
+        paddingTop={{desktop: "60", tablet: "40", mobile: "25"}}
         width="100%"
       >
         <TopSection />
+        <CardSection />
+        <BottomSection />
       </Flex>
     </section>
   );

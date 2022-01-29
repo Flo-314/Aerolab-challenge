@@ -3,7 +3,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {Box, ChakraProvider} from "@chakra-ui/react";
 
 import Home from "./Components/Home/Home";
-import theme from "./theme";
+import theme from "./Styling/theme";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 function App() {
