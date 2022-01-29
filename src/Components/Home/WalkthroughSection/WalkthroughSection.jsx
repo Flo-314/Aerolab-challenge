@@ -41,26 +41,33 @@ function WalkthroughSection() {
         <Box
           bg="linear-gradient(102.47deg, rgba(23, 111, 235, 0.5) -5.34%, rgba(255, 128, 255, 0.5) 106.58%)"
           maxHeight={{desktop: "568px", tablet: "100%"}}
-          padding={{desktop: "0", tablet: "3rem"}}
+          padding={{desktop: 0, tablet: "0 0.5rem"}}
+          paddingTop={{desktop: 0, tablet: "7rem", mobile: "20rem"}}
           w="100%"
         >
-          <Box
-            display={{desktop: "none", tablet: "inherit"}}
-            position="absolute"
-            right="50%"
-            transform={"translate(50%,-50%) translateY(-20%) scale(1.1)"}
-          >
-            <Image src={tabletImage} />
+          <Box position={"relative"}>
+            <Image
+              display={{desktop: "none", tablet: "inherit"}}
+              overflow={"hidden"}
+              position="absolute"
+              right="50%"
+              src={tabletImage}
+              transform={{
+                tablet: "translate(50%,-50%) translateY(-30%) scale(1)",
+                mobile: "translate(50%,-50%)  translateY(-35.5%)",
+              }}
+            />
           </Box>
           <Box margin="0 auto" maxWidth="1464px" paddingY={30}>
             <Grid
-              gap={{desktop: 0, tablet: 2}}
+              gap={{desktop: 0, mobile: 3}}
               height={"100%"}
               margin="0 auto"
-              padding={{desktop: 0, tablet: 3}}
+              padding={{desktop: 0, tablet: 1, mobile: "0 1.75rem"}}
               templateColumns={{
                 svga: "repeat(3,532px)",
-                svg: "repeat(3,480px)",
+                svg: "repeat(3,500px)",
+                desktop: "repeat(3,430px)",
                 tablet: "repeat(3, 1fr)",
                 mobile: "1fr",
               }}

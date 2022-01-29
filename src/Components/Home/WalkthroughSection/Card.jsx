@@ -1,14 +1,15 @@
 import {Box, Container, Flex, Grid, GridItem, Image, Text} from "@chakra-ui/react";
 
-function Card({image, icon, title, content}) {
+function Card({image, icon, title, content, mobileContent}) {
   return (
     <Box
-      bg={{desktop: "white", tablet: "rgba(255, 255, 255, 0.7)"}}
+      bg={{desktop: "white", mobile: "rgba(255, 255, 255, 0.7)"}}
       border="1px solid"
       borderColor={"neutrals.300"}
       borderRadius={"25"}
+      margin={{mobile: "0 1rem", tablet: "0"}}
       padding={3}
-      width="100%"
+      width={{desktop: "100%"}}
     >
       <Grid
         bg="white"
@@ -17,10 +18,10 @@ function Card({image, icon, title, content}) {
         borderRadius={"20"}
         direction={"column"}
         height="100%"
-        maxHeight={{desktop: "676px", tablet: "477px", mobile: "400px"}}
-        maxWidth={{desktop: "532px", tablet: "323px", mobile: "335px"}}
+        maxHeight={{desktop: "676px", tablet: "477px", mobile: "inherit"}}
+        maxWidth={{desktop: "532px", tablet: "323px", mobile: "inherit"}}
         templateColumns={"1fr"}
-        templateRows={{desktop: "4fr 1fr", mobile: "5fr 3fr"}}
+        templateRows={{desktop: "4fr 1fr", tablet: "5fr 3fr", mobile: "7fr 4fr"}}
         width="100%"
       >
         <GridItem bg="specials.illustrationBg" borderRadius={"1rem 1rem 0 0px"} width={"100%"}>
@@ -33,8 +34,8 @@ function Card({image, icon, title, content}) {
                 bg="brand.light"
                 borderRadius={5}
                 height="100%"
-                maxHeight={{desktop: "48px", tablet: "40px"}}
-                maxWidth={{desktop: "48px", tablet: "40px"}}
+                maxHeight={{desktop: "48px", mobile: "40px"}}
+                maxWidth={{desktop: "48px", mobile: "40px"}}
                 padding="1"
                 width="100%"
               >
