@@ -1,6 +1,6 @@
 import LandingSection from "./LandingSection";
 import ProductSection from "./ProductSection";
-import WalkthroughSection from "./WalkthroughSection";
+import WalkthroughSection from "./WalkthroughSection/WalkthroughSection";
 
 function Home() {
   return (

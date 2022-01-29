@@ -1,9 +1,7 @@
 import {Flex, Box, Image, Text, Button, Grid, GridItem, Heading, Container} from "@chakra-ui/react";
 
 import heroDesktop from "../../UI Assets/assets/illustrations/hero-desktop.png";
-import heroResponsive from "../../UI Assets/assets/illustrations/hero-responsive.png";
 import icon from "../../UI Assets/assets/icons/Icons.svg";
-import waveBG from "../../UI Assets/assets/illustrations/single-wave-pattern.svg";
 function LandingSection() {
   return (
     <section>
@@ -20,8 +18,8 @@ function LandingSection() {
           justifyContent={{mobile: "center"}}
           margin="0 auto"
           maxWidth="1464px"
+          paddingBottom={{desktop: 20, mobile: "22rem"}}
           paddingX="20px"
-          paddingY="40px"
           width="100%"
         >
           <Grid templateColumns={{desktop: "1fr 1fr", mobile: "1fr"}}>
@@ -67,15 +65,16 @@ function LandingSection() {
                   paddingX="50"
                   paddingY={"30px"}
                 >
-                  View all products <Image src={icon} />
+                  VIEW ALL PRODUCTS <Image src={icon} />
                 </Button>
               </Box>
             </GridItem>
 
             <GridItem display={{tablet: "none", desktop: "inherit", mobile: "none"}}>
               <Flex
-                bg="specials.illustrationBg"
+                bg="linear-gradient(102.47deg, rgba(23, 111, 235, 0.5) -5.34%, rgba(255, 128, 255, 0.5) 106.58%)"
                 borderRadius={"100px"}
+                boxShadow={"0px 4px 16px rgba(0, 0, 0, 0.12)"}
                 transform={{desktop: "scale(0.9, 0.8)"}}
                 transformOrigin={{desktop: "50% 15%"}}
               >

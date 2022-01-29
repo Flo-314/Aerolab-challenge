@@ -1,9 +1,11 @@
 import {extendTheme} from "@chakra-ui/react";
 import {createBreakpoints} from "@chakra-ui/theme-tools";
 const breakpoints = createBreakpoints({
-  mobile: "0px",
-  tablet: "1024px",
-  desktop: "1025px",
+  mobile: "0px", // 375px
+  tablet: "700px", //  1025px
+  desktop: "1026px", // 1920 px
+  svg: "1250px", // breakpoints for the tricky things
+  svga: "1500px",
 });
 const theme = extendTheme({
   breakpoints,
@@ -34,8 +36,6 @@ const theme = extendTheme({
     specials: {
       illustrationBg:
         "linear-gradient(102.47deg, #7296EB -5.34%, #EAC0E9 106.58%, #EAC0E9 106.58%)",
-      sectionBG:
-        "linear-gradient(102.47deg, rgba(23, 111, 235, 0.5) -5.34%, rgba(255, 128, 255, 0.5) 106.58%)",
       aerolab: "linear-gradient(180deg, #FF8800 0%, #FF6600 100%)",
     },
   },

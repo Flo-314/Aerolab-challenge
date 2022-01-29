@@ -4,12 +4,13 @@ import {useState} from "react";
 import logo from "../../UI Assets/assets/icons/aerolab-logo-1.svg";
 import aeroPay from "../../UI Assets/assets/icons/aeropay-1.svg";
 import chevronIcon from "../../UI Assets/assets/icons/chevron-default.svg";
+import miniLogo from "../../UI Assets/assets/icons/aerolab-logo-2.svg";
 function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
     <header>
-      <Box bg="gray" width={"100%"}>
+      <Box width={"100%"}>
         <Flex
           align="center"
           bg="white"
@@ -22,7 +23,8 @@ function Header() {
           width="100%"
         >
           <Box>
-            <Image src={logo} />
+            <Image display={{desktop: "inherit", mobile: "none"}} src={logo} />
+            <Image display={{desktop: "none", mobile: "inherit"}} src={miniLogo} />
           </Box>
 
           <Flex
