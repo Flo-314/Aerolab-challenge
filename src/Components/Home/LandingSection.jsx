@@ -75,13 +75,13 @@ function LandingSection() {
               <Flex
                 bg="specials.illustrationBg"
                 borderRadius={"100px"}
-                transform={"scale(0.85)"}
+                transform={"scale(0.9, 0.8)"}
                 transformOrigin={"50% 15%"}
               >
                 <Image
                   height="auto"
                   src={heroDesktop}
-                  transform="scale(1.4)"
+                  transform="scale(1.3,1.4)"
                   transformOrigin={"50% 100%"}
                 />
               </Flex>
