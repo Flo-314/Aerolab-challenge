@@ -11,7 +11,7 @@ function Pager() {
       borderRadius={"1rem"}
       gap="3"
       justify={"center"}
-      minW={"200px"}
+      maxHeight={"65px"}
       padding="12px 16px"
     >
       <Button borderRadius={5} maxHeight={"40px"} maxWidth={"40px"}>

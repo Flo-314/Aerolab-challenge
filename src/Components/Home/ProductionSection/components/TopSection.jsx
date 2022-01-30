@@ -6,7 +6,7 @@ import ChevronDownIcon from "../../../../UI Assets/assets/icons/chevron-default.
 import Pager from "./Pager";
 function FilterMenu() {
   return (
-    <Flex align={"center"}>
+    <Flex align={"center"} justify={"center"}>
       <Text
         color="neutrals.600"
         display={{desktop: "inherit", mobile: "none"}}
@@ -101,7 +101,11 @@ function TopSection() {
         </Box>
         PRODUCTS
       </Heading>
-      <Flex justify={"space-between"}>
+      <Flex
+        direction={{tablet: "row", mobile: "column"}}
+        gap={{tablet: "0", mobile: "5"}}
+        justify={{desktop: "space-between", mobile: "center"}}
+      >
         {/* MENU TABLET/MOBILE */}
         <Flex direction={"column"} display={{desktop: "none", mobile: "inherit"}} gap={5}>
           <FilterMenu />
