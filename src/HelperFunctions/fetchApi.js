@@ -1,9 +1,7 @@
 const fetchApi = async (path, route, action, body) => {
   try {
     const token =
-      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
-        .eyJfaWQiOiI2MWYxZDJiZjBkNzNiMDAwMjE3MzY5ZDIiLCJpYXQiOjE2NDMyMzgwNzl9
-        .OAwWbYlP8EnkXC_mSRjgIVkjzaqVK3aD8gzfV1JrZ3g;
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWYxZDJiZjBkNzNiMDAwMjE3MzY5ZDIiLCJpYXQiOjE2NDMyMzgwNzl9.OAwWbYlP8EnkXC_mSRjgIVkjzaqVK3aD8gzfV1JrZ3g";
 
     let Authorization = "Bearer " + token;
     let link = "https://coding-challenge-api.aerolab.co/" + path;
