@@ -1,7 +1,7 @@
 import {Box, Flex, Text} from "@chakra-ui/react";
 
 import Pager from "./Pager";
-function BottomSection() {
+function BottomSection(sortProducts) {
   return (
     <Flex
       align={"center"}

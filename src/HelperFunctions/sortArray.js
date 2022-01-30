@@ -1,12 +1,12 @@
 const sortArray = (array, type, category) => {
   switch (type) {
-    case "Lowest Price": {
+    case "Highest Price": {
       return array.sort((a, b) => {
         if (a.cost > b.cost) return -1;
         if (b.cost > a.cost) return 1;
       });
     }
-    case "Highest Price": {
+    case "Lowest Price": {
       return array.sort((a, b) => {
         if (a.cost > b.cost) return 1;
         if (b.cost > a.cost) return -1;

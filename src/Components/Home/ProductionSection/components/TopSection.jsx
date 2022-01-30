@@ -4,7 +4,7 @@ import {Menu, MenuButton, MenuList, MenuItem} from "@chakra-ui/react";
 import ChevronDownIcon from "../../../../UI Assets/assets/icons/chevron-default.svg";
 
 import Pager from "./Pager";
-function FilterMenu() {
+function FilterMenu(sortProducts) {
   return (
     <Flex align={"center"} justify={"center"}>
       <Text
@@ -53,7 +53,7 @@ function FilterMenu() {
   );
 }
 
-function SortMenu() {
+function SortMenu(sortProducts) {
   return (
     <Flex
       align={"center"}
@@ -68,19 +68,35 @@ function SortMenu() {
       </Text>
       <Button bg="#E5F0FF">
         {" "}
-        <Text bg="brand.default" bgClip={"text"}>
+        <Text
+          bg="brand.default"
+          bgClip={"text"}
+          onClick={() => {
+            sortProducts("");
+          }}
+        >
           Most Recent
         </Text>{" "}
       </Button>
-      <Button bg="#E5F0FF">
-        {" "}
+      <Button
+        bg="#E5F0FF"
+        onClick={() => {
+          sortProducts.sortProducts.sortProducts("Lowest Price");
+        }}
+      >
         <Text bg="brand.default" bgClip={"text"}>
           Lowest Price
         </Text>{" "}
       </Button>
       <Button bg="#E5F0FF">
         {" "}
-        <Text bg="brand.default" bgClip={"text"}>
+        <Text
+          bg="brand.default"
+          bgClip={"text"}
+          onClick={() => {
+            sortProducts.sortProducts.sortProducts("Highest Price");
+          }}
+        >
           Highest Price
         </Text>{" "}
       </Button>
@@ -88,7 +104,7 @@ function SortMenu() {
   );
 }
 
-function TopSection() {
+function TopSection(sortProducts) {
   return (
     <Box>
       <Heading
@@ -108,15 +124,15 @@ function TopSection() {
       >
         {/* MENU TABLET/MOBILE */}
         <Flex direction={"column"} display={{desktop: "none", mobile: "inherit"}} gap={5}>
-          <FilterMenu />
-          <SortMenu />
+          <FilterMenu sortProducts={sortProducts} />
+          <SortMenu sortProducts={sortProducts} />
         </Flex>
         {/*  MENU DESKTOP   */}
         <Box display={{desktop: "inherit", mobile: "none"}}>
-          <FilterMenu display={{mobile: "none"}} />
+          <FilterMenu display={{mobile: "none"}} sortProducts={sortProducts} />
         </Box>
         <Box display={{desktop: "inherit", mobile: "none"}}>
-          <SortMenu display={{mobile: "none"}} />
+          <SortMenu display={{mobile: "none"}} sortProducts={sortProducts} />
         </Box>
         <Pager />
       </Flex>
