@@ -40,11 +40,41 @@ function FilterMenu(sortProducts) {
               </Text>
             </MenuButton>
             <MenuList>
-              <MenuItem>All products</MenuItem>
-              <MenuItem>Gaming</MenuItem>
-              <MenuItem>Audio</MenuItem>
-              <MenuItem>Smart Home</MenuItem>
-              <MenuItem>Monitors & TV</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  sortProducts.sortProducts.sortProducts(undefined);
+                }}
+              >
+                All products
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  sortProducts.sortProducts.sortProducts("category", "Gaming");
+                }}
+              >
+                Gaming
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  sortProducts.sortProducts.sortProducts("category", "Audio");
+                }}
+              >
+                Audio
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  sortProducts.sortProducts.sortProducts("category", "Smart Home");
+                }}
+              >
+                Smart Home
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
+                  sortProducts.sortProducts.sortProducts("category", "Monitors & TV");
+                }}
+              >
+                Monitors & TV
+              </MenuItem>
             </MenuList>
           </>
         )}
@@ -68,13 +98,7 @@ function SortMenu(sortProducts) {
       </Text>
       <Button bg="#E5F0FF">
         {" "}
-        <Text
-          bg="brand.default"
-          bgClip={"text"}
-          onClick={() => {
-            sortProducts("");
-          }}
-        >
+        <Text bg="brand.default" bgClip={"text"}>
           Most Recent
         </Text>{" "}
       </Button>

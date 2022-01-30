@@ -24,11 +24,11 @@ function App() {
   }, []);
 
   const sortProducts = async (type, category) => {
-    const array = sort;
+    let array = [...products];
 
     let sortedProducts = await sortArray(array, type, category);
 
-    SetSort([...sortedProducts]);
+    SetSort(sortedProducts);
   };
 
   console.log(sort);

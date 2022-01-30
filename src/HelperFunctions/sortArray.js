@@ -20,6 +20,8 @@ const sortArray = (array, type, category) => {
         return false;
       });
     }
+    default:
+      return array;
   }
 };
 
