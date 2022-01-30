@@ -1,9 +1,27 @@
 import {Box, Button, Flex, Grid, GridItem, Image, Text} from "@chakra-ui/react";
+import {useEffect, useState} from "react";
 
 import WhiteIcon from "../../../../UI Assets/assets/icons/aeropay-3.svg";
 import BlackIcon from "../../../../UI Assets/assets/icons/aeropay-2.svg";
 
-function Card({category, cost, img, name}) {
+function Card({category, cost, img, name, user}) {
+  const [isRedeemAble, SetIsRedeemable] = useState();
+
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-vars
+    const checkIsRedeemAble = (() => {
+      if (user && cost) {
+        let userPoints = user.points;
+
+        if (userPoints > cost) {
+          SetIsRedeemable(true);
+        } else {
+          SetIsRedeemable(false);
+        }
+      }
+    })();
+  }, [user, cost]);
+
   return (
     <Flex direction="column">
       <Grid
@@ -39,13 +57,16 @@ function Card({category, cost, img, name}) {
           </Flex>
         </GridItem>
       </Grid>
-      <Button bg="brand.default" color="white" marginY="5">
-        Reedem for <Image marginX={2} src={WhiteIcon} /> {cost}
-      </Button>
-      <Button bg="neutrals.200" color="#7C889C" marginTop="3">
-        You need <Image marginX={2} src={BlackIcon} />
-        {cost}
-      </Button>
+      {isRedeemAble ? (
+        <Button bg="brand.default" color="white" marginY="5">
+          Reedem now for <Image marginX={2} src={WhiteIcon} /> {cost}
+        </Button>
+      ) : (
+        <Button disabled bg="neutrals.200" color="#7C889C" marginTop="3">
+          You need <Image marginX={2} src={BlackIcon} />
+          {-cost + user.points} more
+        </Button>
+      )}
     </Flex>
   );
 }

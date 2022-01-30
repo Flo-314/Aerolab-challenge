@@ -4,7 +4,7 @@ import {Menu, MenuButton, MenuList, MenuItem} from "@chakra-ui/react";
 import ChevronDownIcon from "../../../../UI Assets/assets/icons/chevron-default.svg";
 
 import Pager from "./Pager";
-function FilterMenu(sortProducts) {
+function FilterMenu({sortProducts}) {
   return (
     <Flex align={"center"} justify={"center"}>
       <Text
@@ -42,35 +42,35 @@ function FilterMenu(sortProducts) {
             <MenuList>
               <MenuItem
                 onClick={() => {
-                  sortProducts.sortProducts.sortProducts(undefined);
+                  sortProducts(undefined);
                 }}
               >
                 All products
               </MenuItem>
               <MenuItem
                 onClick={() => {
-                  sortProducts.sortProducts.sortProducts("category", "Gaming");
+                  sortProducts("category", "Gaming");
                 }}
               >
                 Gaming
               </MenuItem>
               <MenuItem
                 onClick={() => {
-                  sortProducts.sortProducts.sortProducts("category", "Audio");
+                  sortProducts("category", "Audio");
                 }}
               >
                 Audio
               </MenuItem>
               <MenuItem
                 onClick={() => {
-                  sortProducts.sortProducts.sortProducts("category", "Smart Home");
+                  sortProducts("category", "Smart Home");
                 }}
               >
                 Smart Home
               </MenuItem>
               <MenuItem
                 onClick={() => {
-                  sortProducts.sortProducts.sortProducts("category", "Monitors & TV");
+                  sortProducts("category", "Monitors & TV");
                 }}
               >
                 Monitors & TV
@@ -83,7 +83,7 @@ function FilterMenu(sortProducts) {
   );
 }
 
-function SortMenu(sortProducts) {
+function SortMenu({sortProducts}) {
   return (
     <Flex
       align={"center"}
@@ -105,7 +105,7 @@ function SortMenu(sortProducts) {
       <Button
         bg="#E5F0FF"
         onClick={() => {
-          sortProducts.sortProducts.sortProducts("Lowest Price");
+          sortProducts("Lowest Price");
         }}
       >
         <Text bg="brand.default" bgClip={"text"}>
@@ -118,7 +118,7 @@ function SortMenu(sortProducts) {
           bg="brand.default"
           bgClip={"text"}
           onClick={() => {
-            sortProducts.sortProducts.sortProducts("Highest Price");
+            sortProducts("Highest Price");
           }}
         >
           Highest Price
@@ -128,7 +128,7 @@ function SortMenu(sortProducts) {
   );
 }
 
-function TopSection(sortProducts) {
+function TopSection({sortProducts}) {
   return (
     <Box>
       <Heading

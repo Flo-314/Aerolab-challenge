@@ -5,7 +5,7 @@ import logo from "../../UI Assets/assets/icons/aerolab-logo-1.svg";
 import aeroPay from "../../UI Assets/assets/icons/aeropay-1.svg";
 import chevronIcon from "../../UI Assets/assets/icons/chevron-default.svg";
 import miniLogo from "../../UI Assets/assets/icons/aerolab-logo-2.svg";
-function Header() {
+function Header({user}) {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
@@ -39,7 +39,7 @@ function Header() {
           >
             <Image alt="logo" src={aeroPay} />
             <Text bg="brand.default" bgClip={"text"}>
-              10.000
+              {user && user.points}
             </Text>
 
             <Image

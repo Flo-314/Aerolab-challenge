@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {Box, ChakraProvider} from "@chakra-ui/react";
+import {ChakraProvider} from "@chakra-ui/react";
 
 import fetchApi from "./HelperFunctions/fetchApi";
 import sortArray from "./HelperFunctions/sortArray";
@@ -11,18 +11,18 @@ import Footer from "./Components/Footer/Footer";
 function App() {
   const [products, SetProducts] = useState();
   const [sort, SetSort] = useState();
+  const [user, setUSer] = useState();
 
   useEffect(() => {
-    const getProducts = (async () => {
+    const getData = (async () => {
       let products = await fetchApi("products");
+      let user = await fetchApi("user", "me");
 
       SetProducts(products);
-      let sortedProducts = await sortArray(products, "Highest Price");
-
-      SetSort(sortedProducts);
+      setUSer(user);
+      SetSort(products);
     })();
   }, []);
-
   const sortProducts = async (type, category) => {
     let array = [...products];
 
@@ -31,14 +31,16 @@ function App() {
     SetSort(sortedProducts);
   };
 
-  console.log(sort);
-
   return (
     <BrowserRouter>
       <ChakraProvider theme={theme}>
-        <Header />
+        <Header user={user} />
         <Routes>
-          <Route exact element={<Home sort={sort} sortProducts={sortProducts} />} path="/" />
+          <Route
+            exact
+            element={<Home sort={sort} sortProducts={sortProducts} user={user} />}
+            path="/"
+          />
           <Route element={""} path="/history" />
         </Routes>
         <Footer />

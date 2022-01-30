@@ -1,8 +1,8 @@
-import {Flex, Image, Text, Button, Box, Grid} from "@chakra-ui/react";
+import {Grid, GridItem} from "@chakra-ui/react";
 
 import Card from "./Card";
 
-function CardSection({sort}) {
+function CardSection({sort, user}) {
   return (
     <Grid
       gap="10"
@@ -10,7 +10,11 @@ function CardSection({sort}) {
     >
       {sort &&
         sort.map((product, index) => {
-          return <Card key={index} {...product} />;
+          return (
+            <GridItem key={index}>
+              <Card {...product} user={user} />
+            </GridItem>
+          );
         })}
     </Grid>
   );
