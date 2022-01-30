@@ -47,6 +47,7 @@ function WalkthroughSection() {
         >
           <Box position={"relative"}>
             <Image
+              alt="hero logo"
               display={{desktop: "none", tablet: "inherit"}}
               overflow={"hidden"}
               position="absolute"

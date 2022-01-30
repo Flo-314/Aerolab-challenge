@@ -23,8 +23,8 @@ function Header() {
           width="100%"
         >
           <Box>
-            <Image display={{desktop: "inherit", mobile: "none"}} src={logo} />
-            <Image display={{desktop: "none", mobile: "inherit"}} src={miniLogo} />
+            <Image alt="logo" display={{desktop: "inherit", mobile: "none"}} src={logo} />
+            <Image alt="logo" display={{desktop: "none", mobile: "inherit"}} src={miniLogo} />
           </Box>
 
           <Flex
@@ -37,12 +37,13 @@ function Header() {
             justify="center"
             padding={"8px 16px"}
           >
-            <Image src={aeroPay} />
+            <Image alt="logo" src={aeroPay} />
             <Text bg="brand.default" bgClip={"text"}>
               10.000
             </Text>
 
             <Image
+              alt="chevron icon"
               cursor="pointer"
               src={chevronIcon}
               transform={"rotate(270deg)"}

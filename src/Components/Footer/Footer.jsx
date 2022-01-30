@@ -16,8 +16,8 @@ function Footer() {
           padding="80px"
           width="100%"
         >
-          <Link href="https://github.com/Flo-314/Aerolab-challenge">
-            <Image src={githubIcon} />
+          <Link href="https://github.com/Flo-314/Aerolab-challenge" name="github profile">
+            <Image alt="Github icon" src={githubIcon} />
           </Link>
           <Link href="https://github.com/Flo-314/Aerolab-challenge">
             <Text

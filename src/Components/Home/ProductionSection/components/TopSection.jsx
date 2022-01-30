@@ -27,7 +27,9 @@ function FilterMenu() {
               minW={"200px"}
               paddingLeft={"0"}
               paddingX={"10"}
-              rightIcon={<Image src={ChevronDownIcon} transform={"rotate(90deg)"} />}
+              rightIcon={
+                <Image alt="chevron icon" src={ChevronDownIcon} transform={"rotate(90deg)"} />
+              }
             >
               <Text
                 color="neutrals.600"

@@ -16,6 +16,7 @@ function Pager() {
     >
       <Button borderRadius={5} maxHeight={"40px"} maxWidth={"40px"}>
         <Image
+          alt="chevron icon"
           maxHeight={"30px"}
           maxWidth={"15px"}
           src={ChevronDownIcon}
@@ -36,7 +37,7 @@ function Pager() {
       </Box>
 
       <Button borderRadius={2} maxHeight={"40px"} maxWidth={"40px"}>
-        <Image maxHeight={"30px"} maxWidth={"15px"} src={ChevronDownIcon} />
+        <Image alt="chevron icon" maxHeight={"30px"} maxWidth={"15px"} src={ChevronDownIcon} />
       </Button>
     </Flex>
   );

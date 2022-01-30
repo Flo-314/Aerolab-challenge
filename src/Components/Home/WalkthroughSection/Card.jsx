@@ -25,7 +25,7 @@ function Card({image, icon, title, content, mobileContent}) {
         width="100%"
       >
         <GridItem bg="specials.illustrationBg" borderRadius={"1rem 1rem 0 0px"} width={"100%"}>
-          <Image height="100%" src={image} width="100%" />
+          <Image alt="propaganda" height="100%" src={image} width="100%" />
         </GridItem>
         <GridItem>
           <Flex direction={"column"} flex="1" gap={3} padding="5">
@@ -39,7 +39,7 @@ function Card({image, icon, title, content, mobileContent}) {
                 padding="1"
                 width="100%"
               >
-                <Image height="100%" src={icon} width="100%" />
+                <Image alt="propaganda icon" height="100%" src={icon} width="100%" />
               </Box>
               <Text
                 bg="brand.default"

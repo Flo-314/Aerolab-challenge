@@ -65,7 +65,7 @@ function LandingSection() {
                   paddingX="50"
                   paddingY={"30px"}
                 >
-                  VIEW ALL PRODUCTS <Image src={icon} />
+                  VIEW ALL PRODUCTS <Image alt="chevron icon" src={icon} />
                 </Button>
               </Box>
             </GridItem>
@@ -79,6 +79,7 @@ function LandingSection() {
                 transformOrigin={{desktop: "50% 15%"}}
               >
                 <Image
+                  alt="hero logo"
                   height="auto"
                   src={heroDesktop}
                   transform={{desktop: "scale(1.3,1.4)"}}
