@@ -2,7 +2,7 @@ import {Grid, GridItem} from "@chakra-ui/react";
 
 import Card from "./Card";
 
-function CardSection({sort, user}) {
+function CardSection({sort, user, handleSellProducts}) {
   return (
     <Grid
       gap="10"
@@ -12,7 +12,7 @@ function CardSection({sort, user}) {
         sort.map((product, index) => {
           return (
             <GridItem key={index}>
-              <Card {...product} user={user} />
+              <Card handleSellProducts={handleSellProducts} {...product} user={user} />
             </GridItem>
           );
         })}

@@ -29,7 +29,9 @@ function App() {
 
     let sortedProducts = await sortArray(array, type, category);
 
-    SetSort(sortedProducts);
+    await SetSort(sortedProducts);
+
+    return false;
   };
 
   const handlePoints = async (quantity, type) => {
@@ -41,10 +43,23 @@ function App() {
 
       body = JSON.stringify(body);
       let request = await fetchApi("user", "points", "POST", body);
-
-      console.log(request);
     }
     setUser({...user, points: user.points + quantity});
+
+    return false;
+  };
+
+  const handleSellProducts = async (productId, price) => {
+    let body = {
+      productId,
+    };
+
+    body = JSON.stringify(body);
+    let response = await fetchApi("redeem", undefined, "post", body);
+
+    handlePoints(price * -1);
+
+    return false;
   };
 
   return (
@@ -55,7 +70,14 @@ function App() {
         <Routes>
           <Route
             exact
-            element={<Home sort={sort} sortProducts={sortProducts} user={user} />}
+            element={
+              <Home
+                handleSellProducts={handleSellProducts}
+                sort={sort}
+                sortProducts={sortProducts}
+                user={user}
+              />
+            }
             path="/"
           />
           <Route element={""} path="/history" />

@@ -4,8 +4,9 @@ import {useEffect, useState} from "react";
 import WhiteIcon from "../../../../UI Assets/assets/icons/aeropay-3.svg";
 import BlackIcon from "../../../../UI Assets/assets/icons/aeropay-2.svg";
 
-function Card({category, cost, img, name, user}) {
+function Card({_id, category, cost, img, name, user, handleSellProducts}) {
   const [isRedeemAble, SetIsRedeemable] = useState();
+  const [isLoading, SetIsLoading] = useState(false);
 
   useEffect(() => {
     // eslint-disable-next-line no-unused-vars
@@ -58,13 +59,22 @@ function Card({category, cost, img, name, user}) {
         </GridItem>
       </Grid>
       {isRedeemAble ? (
-        <Button bg="brand.default" color="white" marginY="5">
+        <Button
+          bg="brand.default"
+          color="white"
+          isLoading={isLoading}
+          marginY="5"
+          onClick={async () => {
+            SetIsLoading(true);
+            SetIsLoading(await handleSellProducts(_id, cost));
+          }}
+        >
           Reedem now for <Image marginX={2} src={WhiteIcon} /> {cost}
         </Button>
       ) : (
         <Button disabled bg="neutrals.200" color="#7C889C" marginTop="3">
           You need <Image marginX={2} src={BlackIcon} />
-          {-cost + user.points} more
+          {cost - user.points} more
         </Button>
       )}
     </Flex>
