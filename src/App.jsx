@@ -52,7 +52,6 @@ function App() {
     return false;
   };
 
-  console.log(sort);
   const handlePoints = async (quantity, type) => {
     // if type is "add"  => apiRequest. next => SetUser  = quantity + user.points
     if (type === "add") {

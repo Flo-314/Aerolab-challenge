@@ -1,8 +1,8 @@
 import {Box, Button, Flex, Grid, GridItem, Image, Text} from "@chakra-ui/react";
 import {useEffect, useState} from "react";
 
-import WhiteIcon from "../../../../UI Assets/assets/icons/aeropay-3.svg";
-import BlackIcon from "../../../../UI Assets/assets/icons/aeropay-2.svg";
+import WhiteIcon from "../../../../../UI Assets/assets/icons/aeropay-3.svg";
+import BlackIcon from "../../../../../UI Assets/assets/icons/aeropay-2.svg";
 
 function Card({_id, category, cost, img, name, user, handleSellProducts}) {
   const [isRedeemAble, SetIsRedeemable] = useState();

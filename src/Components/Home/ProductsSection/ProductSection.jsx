@@ -1,7 +1,7 @@
 import {Flex} from "@chakra-ui/react";
 
 import BottomSection from "./components/BottomSection";
-import CardSection from "./components/CardsSection";
+import CardSection from "./components/CardsSection/CardsSection";
 import TopSection from "./components/topSection/TopSection";
 
 function ProductSection({sort, sortProducts, user, handleSellProducts, handleMovePage}) {
