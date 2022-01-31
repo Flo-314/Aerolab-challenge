@@ -52,7 +52,7 @@ function Card({_id, category, cost, img, name, user, handleSellProducts}) {
       >
         <GridItem borderRadius={"1rem 1rem 0 0 "} justifySelf={"center"} maxHeight={"506px"}>
           <Box>
-            <Image height="204px" src={img.url} width="280px" />
+            <Image alt="product" height="204px" src={img.url} width="280px" />
           </Box>
         </GridItem>
         <GridItem borderColor={"#DAE4F2"} borderTop="1px" padding="7" paddingY="5">
@@ -88,6 +88,7 @@ function Card({_id, category, cost, img, name, user, handleSellProducts}) {
         >
           Reedem now for{" "}
           <Image
+            alt="aeropoints"
             height={{tablet: "24px", mobile: "20px"}}
             marginX={2}
             src={WhiteIcon}
@@ -99,6 +100,7 @@ function Card({_id, category, cost, img, name, user, handleSellProducts}) {
         <Button disabled bg="neutrals.200" color="#7C889C" marginTop="3" marginY="5">
           You need{" "}
           <Image
+            alt="aeropoints"
             height={{tablet: "24px", mobile: "20px"}}
             marginX={2}
             src={BlackIcon}
