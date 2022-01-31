@@ -10,6 +10,7 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 function App() {
   const [products, SetProducts] = useState();
+  const [productsPage, SetProductsPage] = useState();
   const [sort, SetSort] = useState();
   const [user, setUser] = useState();
 
@@ -18,20 +19,29 @@ function App() {
     const getData = (async () => {
       let products = await fetchApi("products");
       let user = await fetchApi("user", "me");
+      const page1 = products.slice(0, 16);
 
       SetProducts(products);
+      SetProductsPage(page1);
       setUser(user);
       SetSort(products);
     })();
   }, []);
   const sortProducts = async (type, category) => {
-    if (category) {
+    //all the product shows only the page products
+    if (type === undefined) {
+      let array = [...productsPage];
+
+      await SetSort(array);
+    } //for category sorts all the products
+    else if (category) {
       let array = [...products];
 
       let sortedProducts = await sortArray(array, type, category);
 
       await SetSort(sortedProducts);
-    } else {
+    } //for price sorts only the SortedProducts
+    else {
       let array = [...sort];
 
       let sortedProducts = await sortArray(array, type);

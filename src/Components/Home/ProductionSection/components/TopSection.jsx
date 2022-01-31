@@ -34,6 +34,7 @@ function FilterMenu({sortProducts}) {
         display={{desktop: "inherit", mobile: "none"}}
         fontSize={{desktop: "text.Dl1", mobile: "text.Ml1"}}
         fontWeight={600}
+        minWidth={"80px"}
       >
         Filter by:
       </Text>
