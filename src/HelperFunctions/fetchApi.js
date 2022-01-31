@@ -9,9 +9,11 @@ const fetchApi = async (path, route, action, body) => {
     if (route) {
       link += "/" + route;
     }
+
     const ping = await fetch(link, {
       method: action,
-      body: body,
+      body,
+
       headers: {
         Authorization,
         "Content-Type": "application/json",

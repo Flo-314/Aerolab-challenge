@@ -1,0 +1,21 @@
+
+
+Level 1 - It works! gear
+   
+        When the user clicks on the Redeem now button, the system should automatically deduct the item’s price from the users’ points.
+        The user should be able add points to their account
+
+
+
+Level 2 - Eye Candy nail_care
+        Put all your effort into making the site look beautiful
+        Pay attention to details and the design system we provide you
+        The user should be able to use the pagination to view more listed products
+
+
+
+Level 3 - Mind-blowing exploding_head
+        Make some visual tweaks (animations, micro interactions, etc)
+        Put all your effort on website performance (images, web vitals, network optimization, etc)
+        Be careful about environment variables security
+        If you want you can make some unit or integration tests
