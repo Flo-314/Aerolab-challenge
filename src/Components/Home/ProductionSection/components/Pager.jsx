@@ -2,7 +2,7 @@ import {Flex, Image, Text, Button, Box} from "@chakra-ui/react";
 
 import ChevronDownIcon from "../../../../UI Assets/assets/icons/chevron-default.svg";
 
-function Pager() {
+function Pager({handleMovePage}) {
   return (
     <Flex
       align="center"
@@ -14,7 +14,14 @@ function Pager() {
       maxHeight={"65px"}
       padding="12px 16px"
     >
-      <Button borderRadius={5} maxHeight={"40px"} maxWidth={"40px"}>
+      <Button
+        borderRadius={5}
+        maxHeight={"40px"}
+        maxWidth={"40px"}
+        onClick={() => {
+          handleMovePage(1);
+        }}
+      >
         <Image
           alt="chevron icon"
           maxHeight={"30px"}
@@ -36,7 +43,14 @@ function Pager() {
         </Text>
       </Box>
 
-      <Button borderRadius={2} maxHeight={"40px"} maxWidth={"40px"}>
+      <Button
+        borderRadius={2}
+        maxHeight={"40px"}
+        maxWidth={"40px"}
+        onClick={() => {
+          handleMovePage(2);
+        }}
+      >
         <Image alt="chevron icon" maxHeight={"30px"} maxWidth={"15px"} src={ChevronDownIcon} />
       </Button>
     </Flex>

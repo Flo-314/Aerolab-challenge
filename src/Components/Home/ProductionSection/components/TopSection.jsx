@@ -108,8 +108,7 @@ function SortMenu({sortProducts}) {
     </Flex>
   );
 }
-
-function TopSection({sortProducts}) {
+function TopSection({sortProducts, handleMovePage}) {
   return (
     <Box paddingY={{desktop: "20", mobile: "10"}}>
       <Heading
@@ -145,7 +144,7 @@ function TopSection({sortProducts}) {
         <Box display={{desktop: "inherit", mobile: "none"}}>
           <SortMenu display={{mobile: "none"}} sortProducts={sortProducts} />
         </Box>
-        <Pager />
+        <Pager handleMovePage={handleMovePage} />
       </Flex>
     </Box>
   );

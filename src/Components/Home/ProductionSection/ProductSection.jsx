@@ -4,7 +4,7 @@ import BottomSection from "./components/BottomSection";
 import CardSection from "./components/CardsSection";
 import TopSection from "./components/TopSection";
 
-function ProductSection({sort, sortProducts, user, handleSellProducts}) {
+function ProductSection({sort, sortProducts, user, handleSellProducts, handleMovePage}) {
   return (
     <section id="products shop ">
       <Flex
@@ -16,9 +16,9 @@ function ProductSection({sort, sortProducts, user, handleSellProducts}) {
         paddingTop={{desktop: "60", tablet: "40", mobile: "25"}}
         width="90%"
       >
-        <TopSection sortProducts={sortProducts} />
+        <TopSection handleMovePage={handleMovePage} sortProducts={sortProducts} />
         <CardSection handleSellProducts={handleSellProducts} sort={sort} user={user} />
-        <BottomSection />
+        <BottomSection handleMovePage={handleMovePage} />
       </Flex>
     </section>
   );

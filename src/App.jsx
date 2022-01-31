@@ -21,10 +21,10 @@ function App() {
       let user = await fetchApi("user", "me");
       const page1 = products.slice(0, 16);
 
+      setUser(user);
       SetProducts(products);
       SetProductsPage(page1);
-      setUser(user);
-      SetSort(products);
+      SetSort(page1);
     })();
   }, []);
   const sortProducts = async (type, category) => {
@@ -52,6 +52,7 @@ function App() {
     return false;
   };
 
+  console.log(sort);
   const handlePoints = async (quantity, type) => {
     // if type is "add"  => apiRequest. next => SetUser  = quantity + user.points
     if (type === "add") {
@@ -79,6 +80,22 @@ function App() {
 
     return false;
   };
+  const handleMovePage = (page) => {
+    let newProducts = [...products];
+
+    if (page === 1) {
+      const products = newProducts.slice(0, 16);
+
+      SetSort(products);
+
+      SetProductsPage(products);
+    } else {
+      const products = newProducts.slice(16);
+
+      SetProductsPage(products);
+      SetSort(products);
+    }
+  };
 
   return (
     <BrowserRouter>
@@ -90,6 +107,7 @@ function App() {
             exact
             element={
               <Home
+                handleMovePage={handleMovePage}
                 handleSellProducts={handleSellProducts}
                 sort={sort}
                 sortProducts={sortProducts}

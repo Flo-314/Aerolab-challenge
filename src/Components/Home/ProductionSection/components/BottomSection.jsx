@@ -1,7 +1,7 @@
 import {Box, Flex, Text} from "@chakra-ui/react";
 
 import Pager from "./Pager";
-function BottomSection(sortProducts) {
+function BottomSection({handleMovePage}) {
   return (
     <Flex
       align={"center"}
@@ -24,7 +24,7 @@ function BottomSection(sortProducts) {
           products
         </Text>
       </Box>
-      <Pager order={{desktop: "999", mobile: "1"}} />
+      <Pager handleMovePage={handleMovePage} order={{desktop: "999", mobile: "1"}} />
     </Flex>
   );
 }
