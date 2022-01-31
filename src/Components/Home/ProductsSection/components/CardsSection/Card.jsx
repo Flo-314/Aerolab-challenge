@@ -1,5 +1,6 @@
 import {Box, Button, Flex, Grid, GridItem, Image, Text} from "@chakra-ui/react";
 import {useEffect, useState} from "react";
+import {useToast} from "@chakra-ui/react";
 
 import WhiteIcon from "../../../../../Styling/UI Assets/assets/icons/aeropay-3.svg";
 import BlackIcon from "../../../../../Styling/UI Assets/assets/icons/aeropay-2.svg";
@@ -7,6 +8,20 @@ import BlackIcon from "../../../../../Styling/UI Assets/assets/icons/aeropay-2.s
 function Card({_id, category, cost, img, name, user, handleSellProducts}) {
   const [isRedeemAble, SetIsRedeemable] = useState();
   const [isLoading, SetIsLoading] = useState(false);
+
+  const toast = useToast({
+    position: "bottom-left",
+    title: name + "  redeemed successfully",
+    status: "success",
+    duration: 3500,
+    isClosable: true,
+    containerStyle: {
+      width: {desktop: "800px", mobile: "150px"},
+      maxWidth: "80%",
+      marginLeft: "2em",
+      marginBottom: "2em",
+    },
+  });
 
   useEffect(() => {
     // eslint-disable-next-line no-unused-vars
@@ -67,7 +82,8 @@ function Card({_id, category, cost, img, name, user, handleSellProducts}) {
           marginY="5"
           onClick={async () => {
             SetIsLoading(true);
-            SetIsLoading(await handleSellProducts(_id, cost));
+            await SetIsLoading(await handleSellProducts(_id, cost));
+            toast({});
           }}
         >
           Reedem now for <Image marginX={2} src={WhiteIcon} /> {cost}
