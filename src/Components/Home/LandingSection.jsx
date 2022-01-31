@@ -1,4 +1,15 @@
-import {Flex, Box, Image, Text, Button, Grid, GridItem, Heading, Container} from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  Image,
+  Text,
+  Button,
+  Grid,
+  GridItem,
+  Heading,
+  Container,
+  Link,
+} from "@chakra-ui/react";
 
 import heroDesktop from "../../Styling/UI Assets/assets/illustrations/hero-desktop.png";
 import icon from "../../Styling/UI Assets/assets/icons/Icons.svg";
@@ -57,16 +68,25 @@ function LandingSection() {
                 </Container>
               </Flex>
               <Box>
-                <Button
-                  bg="brand.default"
-                  borderRadius={"24px"}
-                  color={"neutrals.0"}
-                  fontSize={{desktop: "text.Dl1", mobile: "text.Ml1"}}
-                  paddingX="50"
-                  paddingY={"30px"}
-                >
-                  VIEW ALL PRODUCTS <Image alt="chevron icon" src={icon} />
-                </Button>
+                <Link href="#products">
+                  <Button
+                    _hover={{bg: "brand.default", opacity: "0.75"}}
+                    bg="brand.default"
+                    borderRadius={"24px"}
+                    color={"neutrals.0"}
+                    fontSize={{desktop: "text.Dl1", mobile: "text.Ml1"}}
+                    paddingX="50"
+                    paddingY={"30px"}
+                  >
+                    VIEW ALL PRODUCTS{" "}
+                    <Image
+                      alt="chevron icon"
+                      height={{tablet: "24px", mobile: "20px"}}
+                      src={icon}
+                      width={{tablet: "24px", mobile: "20px"}}
+                    />
+                  </Button>
+                </Link>
               </Box>
             </GridItem>
 

@@ -20,8 +20,13 @@ function PointsMenu({user, handlePoints}) {
       justify="center"
       padding={"8px 16px"}
     >
-      <Image alt="logo" src={aeroPay} />
-      <Text bg="brand.default" bgClip={"text"}>
+      <Image
+        alt="logo"
+        height={{tablet: "32px", mobile: "24px"}}
+        src={aeroPay}
+        width={{tablet: "32px", mobile: "24px"}}
+      />
+      <Text bg="brand.default" bgClip={"text"} fontSize={{tablet: "text.Dl1", mobile: "text.Ml1"}}>
         {user && user.points}
       </Text>
       <Menu placement="top-end">
@@ -29,9 +34,10 @@ function PointsMenu({user, handlePoints}) {
           <Image
             alt="chevron icon"
             cursor="pointer"
+            height={{tablet: "24px", mobile: "20px"}}
             src={chevronIcon}
-            transform={"rotate(270deg)"}
-            onClick={() => {}}
+            transform={"rotate(90deg)"}
+            width={{tablet: "24px", mobile: "20px"}}
           />
         </MenuButton>
         <MenuList padding="5">
@@ -59,7 +65,11 @@ function PointsMenu({user, handlePoints}) {
           >
             <Flex justify={"space-between"}>
               <Text fontSize={{desktop: "text.Dl1", mobile: "text.Ml1"}}>Aerocard</Text>
-              <Image src={CardAeroPay} />
+              <Image
+                height={{tablet: "24px", mobile: "20px"}}
+                src={CardAeroPay}
+                width={{tablet: "24px", mobile: "20px"}}
+              />
             </Flex>
             <Flex fontSize={{desktop: "text.Dl2", mobile: "text.Ml2"}} justify={"space-between"}>
               <Text>Jonh Kite</Text>

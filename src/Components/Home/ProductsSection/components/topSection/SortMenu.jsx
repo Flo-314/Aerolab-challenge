@@ -12,14 +12,13 @@ function SortMenu({sortProducts}) {
       <Text color="neutrals.600" display={{desktop: "inherit", mobile: "none"}}>
         Sort By:
       </Text>
-      <Button bg="#E5F0FF">
+      <Button _hover={{bg: "brand.default", opacity: "0.75"}} bg="brand.default" borderRadius={10}>
         {" "}
-        <Text bg="brand.default" bgClip={"text"}>
-          Most Recent
-        </Text>{" "}
+        <Text color="neutrals.100">Most Recent</Text>{" "}
       </Button>
       <Button
         bg="#E5F0FF"
+        borderRadius={10}
         onClick={() => {
           sortProducts("Lowest Price");
         }}
@@ -28,15 +27,14 @@ function SortMenu({sortProducts}) {
           Lowest Price
         </Text>{" "}
       </Button>
-      <Button bg="#E5F0FF">
-        {" "}
-        <Text
-          bg="brand.default"
-          bgClip={"text"}
-          onClick={() => {
-            sortProducts("Highest Price");
-          }}
-        >
+      <Button
+        bg="#E5F0FF"
+        borderRadius={10}
+        onClick={() => {
+          sortProducts("Highest Price");
+        }}
+      >
+        <Text bg="brand.default" bgClip={"text"}>
           Highest Price
         </Text>{" "}
       </Button>

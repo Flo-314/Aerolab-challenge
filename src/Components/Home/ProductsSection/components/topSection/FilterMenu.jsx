@@ -27,7 +27,7 @@ function FilterMenu({sortProducts}) {
   }, [sort]);
 
   return (
-    <Flex align={"center"} justify={"center"}>
+    <Flex align={"center"} justify={"center"} marginX="5">
       <Text
         color="neutrals.600"
         display={{desktop: "inherit", mobile: "none"}}

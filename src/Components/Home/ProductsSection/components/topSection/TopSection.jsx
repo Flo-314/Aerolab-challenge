@@ -1,4 +1,4 @@
-import {Flex, Box, Heading} from "@chakra-ui/react";
+import {Flex, Box, Heading, Link} from "@chakra-ui/react";
 
 import Pager from "../Pager";
 
@@ -22,6 +22,7 @@ function TopSection({sortProducts, handleMovePage}) {
       <Flex
         direction={{tablet: "row", mobile: "column"}}
         gap={{tablet: "0", mobile: "5"}}
+        id="products"
         justify={{desktop: "space-between", tablet: "space-between", mobile: "center"}}
       >
         {/* MENU TABLET/MOBILE */}

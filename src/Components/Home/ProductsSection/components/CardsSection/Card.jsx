@@ -86,11 +86,24 @@ function Card({_id, category, cost, img, name, user, handleSellProducts}) {
             toast({});
           }}
         >
-          Reedem now for <Image marginX={2} src={WhiteIcon} /> {cost}
+          Reedem now for{" "}
+          <Image
+            height={{tablet: "24px", mobile: "20px"}}
+            marginX={2}
+            src={WhiteIcon}
+            width={{tablet: "24px", mobile: "20px"}}
+          />{" "}
+          {cost}
         </Button>
       ) : (
         <Button disabled bg="neutrals.200" color="#7C889C" marginTop="3" marginY="5">
-          You need <Image marginX={2} src={BlackIcon} />
+          You need{" "}
+          <Image
+            height={{tablet: "24px", mobile: "20px"}}
+            marginX={2}
+            src={BlackIcon}
+            width={{tablet: "24px", mobile: "20px"}}
+          />
           {cost - user.points} more
         </Button>
       )}

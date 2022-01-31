@@ -1,15 +1,10 @@
-import {Flex, Box, Image, Text, Button} from "@chakra-ui/react";
-import {useState} from "react";
+import {Flex, Box, Image} from "@chakra-ui/react";
 
 import logo from "../../Styling/UI Assets/assets/icons/aerolab-logo-1.svg";
-import aeroPay from "../../Styling/UI Assets/assets/icons/aeropay-1.svg";
-import chevronIcon from "../../Styling/UI Assets/assets/icons/chevron-default.svg";
 import miniLogo from "../../Styling/UI Assets/assets/icons/aerolab-logo-2.svg";
 
 import PointsMenu from "./PointsMenu";
 function Header({user, handlePoints}) {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-
   return (
     <header>
       <Box width={"100%"}>

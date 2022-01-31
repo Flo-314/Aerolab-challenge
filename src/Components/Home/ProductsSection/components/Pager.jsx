@@ -11,11 +11,14 @@ function Pager({handleMovePage}) {
       borderRadius={"1rem"}
       gap="3"
       justify={"center"}
+      marginX={5}
       maxHeight={"65px"}
       padding="12px 16px"
     >
       <Button
-        borderRadius={5}
+        _hover={{background: "#CCE1FF"}}
+        bg="neutrals.200"
+        borderRadius={10}
         maxHeight={"40px"}
         maxWidth={"40px"}
         onClick={() => {
@@ -44,7 +47,9 @@ function Pager({handleMovePage}) {
       </Box>
 
       <Button
-        borderRadius={2}
+        _hover={{background: "#CCE1FF"}}
+        bg="neutrals.200"
+        borderRadius={10}
         maxHeight={"40px"}
         maxWidth={"40px"}
         onClick={() => {
