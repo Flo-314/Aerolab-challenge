@@ -6,6 +6,7 @@ function CardSection({sort, user, handleSellProducts}) {
   return (
     <Grid
       gap="10"
+      margin="0"
       templateColumns={{desktop: "1fr 1fr 1fr 1fr", tablet: "1fr 1fr 1fr", mobile: "1fr"}}
     >
       {sort &&

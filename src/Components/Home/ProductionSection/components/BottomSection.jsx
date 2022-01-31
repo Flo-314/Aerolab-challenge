@@ -8,6 +8,7 @@ function BottomSection(sortProducts) {
       direction={{desktop: "row", mobile: "column"}}
       gap={{desktop: "0", mobile: "5"}}
       justify={{desktop: "space-between", mobile: "center"}}
+      paddingY={{desktop: "20", mobile: "10"}}
     >
       <Box />
       <Box />

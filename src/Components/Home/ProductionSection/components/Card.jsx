@@ -72,7 +72,7 @@ function Card({_id, category, cost, img, name, user, handleSellProducts}) {
           Reedem now for <Image marginX={2} src={WhiteIcon} /> {cost}
         </Button>
       ) : (
-        <Button disabled bg="neutrals.200" color="#7C889C" marginTop="3">
+        <Button disabled bg="neutrals.200" color="#7C889C" marginTop="3" marginY="5">
           You need <Image marginX={2} src={BlackIcon} />
           {cost - user.points} more
         </Button>

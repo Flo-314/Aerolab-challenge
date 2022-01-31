@@ -130,11 +130,12 @@ function SortMenu({sortProducts}) {
 
 function TopSection({sortProducts}) {
   return (
-    <Box>
+    <Box paddingY={{desktop: "20", mobile: "10"}}>
       <Heading
         fontSize={{desktop: "titles.Dl2", mobile: "titles.Ml2"}}
         fontWeight={1000}
         marginBottom={5}
+        textAlign={{tablet: "inherit", mobile: "center"}}
       >
         <Box as="span" color={"brand.blue"} marginRight={3}>
           TECH
@@ -144,10 +145,15 @@ function TopSection({sortProducts}) {
       <Flex
         direction={{tablet: "row", mobile: "column"}}
         gap={{tablet: "0", mobile: "5"}}
-        justify={{desktop: "space-between", mobile: "center"}}
+        justify={{desktop: "space-between", tablet: "space-between", mobile: "center"}}
       >
         {/* MENU TABLET/MOBILE */}
-        <Flex direction={"column"} display={{desktop: "none", mobile: "inherit"}} gap={5}>
+        <Flex
+          align={{tablet: "flex-start"}}
+          direction={"column"}
+          display={{desktop: "none", mobile: "inherit"}}
+          gap={5}
+        >
           <FilterMenu sortProducts={sortProducts} />
           <SortMenu sortProducts={sortProducts} />
         </Flex>
