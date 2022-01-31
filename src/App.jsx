@@ -50,7 +50,7 @@ function App() {
   return (
     <BrowserRouter>
       <ChakraProvider theme={theme}>
-        <Header user={user} />
+        <Header handlePoints={handlePoints} user={user} />
 
         <Routes>
           <Route

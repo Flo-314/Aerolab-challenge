@@ -5,7 +5,9 @@ import logo from "../../UI Assets/assets/icons/aerolab-logo-1.svg";
 import aeroPay from "../../UI Assets/assets/icons/aeropay-1.svg";
 import chevronIcon from "../../UI Assets/assets/icons/chevron-default.svg";
 import miniLogo from "../../UI Assets/assets/icons/aerolab-logo-2.svg";
-function Header({user}) {
+
+import PointsMenu from "./PointsMenu";
+function Header({user, handlePoints}) {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
@@ -17,6 +19,7 @@ function Header({user}) {
           height={"100%"}
           justify="space-between"
           margin="0 auto"
+          marginBottom={"9rem"}
           maxWidth="1464px"
           paddingX="20px"
           paddingY="40px"
@@ -27,29 +30,7 @@ function Header({user}) {
             <Image alt="logo" display={{desktop: "none", mobile: "inherit"}} src={miniLogo} />
           </Box>
 
-          <Flex
-            align="center"
-            border={"1px"}
-            borderColor={"neutrals.300"}
-            borderRadius={"16px"}
-            boxShadow={" 0px 2px 12px rgba(0, 0, 0, 0.08)"}
-            gap={3}
-            justify="center"
-            padding={"8px 16px"}
-          >
-            <Image alt="logo" src={aeroPay} />
-            <Text bg="brand.default" bgClip={"text"}>
-              {user && user.points}
-            </Text>
-
-            <Image
-              alt="chevron icon"
-              cursor="pointer"
-              src={chevronIcon}
-              transform={"rotate(270deg)"}
-              onClick={() => {}}
-            />
-          </Flex>
+          <PointsMenu handlePoints={handlePoints} user={user} />
         </Flex>
       </Box>
     </header>
