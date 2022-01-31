@@ -1,12 +1,12 @@
 import {Flex, Box, Image, Text, Button, Grid, GridItem, Heading, Container} from "@chakra-ui/react";
 
-import iconC1 from "../../../UI Assets/assets/icons/walkthrough-1.svg";
-import iconC2 from "../../../UI Assets/assets/icons/walkthrough-2.svg";
-import iconC3 from "../../../UI Assets/assets/icons/walkthrough-3.svg";
-import imageC1 from "../../../UI Assets/assets/illustrations/walkthroug-1-desktop.png";
-import imageC2 from "../../../UI Assets/assets/illustrations/walkthroug-2-desktop.png";
-import imageC3 from "../../../UI Assets/assets/illustrations/walkthroug-3-desktop.png";
-import tabletImage from "../../../UI Assets/assets/illustrations/hero-responsive.png";
+import iconC1 from "../../../Styling/UI Assets/assets/icons/walkthrough-1.svg";
+import iconC2 from "../../../Styling/UI Assets/assets/icons/walkthrough-2.svg";
+import iconC3 from "../../../Styling/UI Assets/assets/icons/walkthrough-3.svg";
+import imageC1 from "../../../Styling/UI Assets/assets/illustrations/walkthroug-1-desktop.png";
+import imageC2 from "../../../Styling/UI Assets/assets/illustrations/walkthroug-2-desktop.png";
+import imageC3 from "../../../Styling/UI Assets/assets/illustrations/walkthroug-3-desktop.png";
+import tabletImage from "../../../Styling/UI Assets/assets/illustrations/hero-responsive.png";
 
 import Card from "./Card";
 function WalkthroughSection() {

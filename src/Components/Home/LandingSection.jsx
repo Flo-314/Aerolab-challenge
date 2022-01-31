@@ -1,7 +1,7 @@
 import {Flex, Box, Image, Text, Button, Grid, GridItem, Heading, Container} from "@chakra-ui/react";
 
-import heroDesktop from "../../UI Assets/assets/illustrations/hero-desktop.png";
-import icon from "../../UI Assets/assets/icons/Icons.svg";
+import heroDesktop from "../../Styling/UI Assets/assets/illustrations/hero-desktop.png";
+import icon from "../../Styling/UI Assets/assets/icons/Icons.svg";
 function LandingSection() {
   return (
     <section>

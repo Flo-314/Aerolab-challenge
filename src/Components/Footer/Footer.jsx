@@ -1,6 +1,6 @@
 import {Box, Flex, Image, Link, Text} from "@chakra-ui/react";
 
-import githubIcon from "../../UI Assets/assets/icons/github-default.svg";
+import githubIcon from "../../Styling/UI Assets/assets/icons/github-default.svg";
 function Footer() {
   return (
     <footer>

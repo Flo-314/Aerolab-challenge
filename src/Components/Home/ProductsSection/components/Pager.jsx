@@ -1,6 +1,6 @@
 import {Flex, Image, Text, Button, Box} from "@chakra-ui/react";
 
-import ChevronDownIcon from "../../../../UI Assets/assets/icons/chevron-default.svg";
+import ChevronDownIcon from "../../../../Styling/UI Assets/assets/icons/chevron-default.svg";
 
 function Pager({handleMovePage}) {
   return (

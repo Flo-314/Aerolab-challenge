@@ -1,8 +1,8 @@
 import {Box, Button, Flex, Grid, GridItem, Image, Text} from "@chakra-ui/react";
 import {useEffect, useState} from "react";
 
-import WhiteIcon from "../../../../../UI Assets/assets/icons/aeropay-3.svg";
-import BlackIcon from "../../../../../UI Assets/assets/icons/aeropay-2.svg";
+import WhiteIcon from "../../../../../Styling/UI Assets/assets/icons/aeropay-3.svg";
+import BlackIcon from "../../../../../Styling/UI Assets/assets/icons/aeropay-2.svg";
 
 function Card({_id, category, cost, img, name, user, handleSellProducts}) {
   const [isRedeemAble, SetIsRedeemable] = useState();
@@ -31,10 +31,11 @@ function Card({_id, category, cost, img, name, user, handleSellProducts}) {
         borderColor={"neutrals.300"}
         borderRadius={"10"}
         filter="drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.02));"
+        height={"506px"}
         templateColumns={"1fr"}
         templateRows={"minmax(348px,4fr) 1fr"}
       >
-        <GridItem borderRadius={"1rem 1rem 0 0 "} justifySelf={"center"}>
+        <GridItem borderRadius={"1rem 1rem 0 0 "} justifySelf={"center"} maxHeight={"506px"}>
           <Box>
             <Image height="204px" src={img.url} width="280px" />
           </Box>

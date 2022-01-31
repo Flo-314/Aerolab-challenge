@@ -2,9 +2,9 @@ import {Flex, Box, Image, Text, Button} from "@chakra-ui/react";
 import {useState} from "react";
 import {Menu, MenuButton, MenuList, MenuGroup, MenuDivider} from "@chakra-ui/react";
 
-import aeroPay from "../../UI Assets/assets/icons/aeropay-1.svg";
-import CardAeroPay from "../../UI Assets/assets/icons/aeropay-2.svg";
-import chevronIcon from "../../UI Assets/assets/icons/chevron-default.svg";
+import aeroPay from "../../Styling/UI Assets/assets/icons/aeropay-1.svg";
+import CardAeroPay from "../../Styling/UI Assets/assets/icons/aeropay-2.svg";
+import chevronIcon from "../../Styling/UI Assets/assets/icons/chevron-default.svg";
 
 function PointsMenu({user, handlePoints}) {
   const [selectedPoints, SetSelectedPoints] = useState(1000);

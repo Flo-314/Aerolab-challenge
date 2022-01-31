@@ -1,10 +1,10 @@
 import {Flex, Box, Image, Text, Button} from "@chakra-ui/react";
 import {useState} from "react";
 
-import logo from "../../UI Assets/assets/icons/aerolab-logo-1.svg";
-import aeroPay from "../../UI Assets/assets/icons/aeropay-1.svg";
-import chevronIcon from "../../UI Assets/assets/icons/chevron-default.svg";
-import miniLogo from "../../UI Assets/assets/icons/aerolab-logo-2.svg";
+import logo from "../../Styling/UI Assets/assets/icons/aerolab-logo-1.svg";
+import aeroPay from "../../Styling/UI Assets/assets/icons/aeropay-1.svg";
+import chevronIcon from "../../Styling/UI Assets/assets/icons/chevron-default.svg";
+import miniLogo from "../../Styling/UI Assets/assets/icons/aerolab-logo-2.svg";
 
 import PointsMenu from "./PointsMenu";
 function Header({user, handlePoints}) {
