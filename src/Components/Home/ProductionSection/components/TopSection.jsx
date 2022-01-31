@@ -1,10 +1,32 @@
-import {Flex, Box, Image, Text, Button, Heading} from "@chakra-ui/react";
-import {Menu, MenuButton, MenuList, MenuItem} from "@chakra-ui/react";
-
-import ChevronDownIcon from "../../../../UI Assets/assets/icons/chevron-default.svg";
+import {Flex, Box, Select, Text, Button, Heading} from "@chakra-ui/react";
+import {useEffect, useState} from "react";
 
 import Pager from "./Pager";
 function FilterMenu({sortProducts}) {
+  const [sort, SetSort] = useState();
+
+  useEffect(() => {
+    if (sort && sortProducts) {
+      switch (sort) {
+        case "All products":
+          sortProducts(undefined);
+          break;
+        case "Gaming":
+          sortProducts("category", "Gaming");
+          break;
+        case "Audio":
+          sortProducts("category", "Audio");
+          break;
+        case "Smart Home":
+          sortProducts("category", "Smart Home");
+          break;
+        case "Monitors & TV":
+          sortProducts("category", "Monitors & TV");
+          break;
+      }
+    }
+  }, [sort]);
+
   return (
     <Flex align={"center"} justify={"center"}>
       <Text
@@ -15,70 +37,28 @@ function FilterMenu({sortProducts}) {
       >
         Filter by:
       </Text>
-      <Menu>
-        {({isOpen}) => (
-          <>
-            <MenuButton
-              as={Button}
-              bg="white"
-              border={"1px solid #DAE4F2"}
-              borderRadius={"1rem"}
-              isActive={isOpen}
-              minW={"200px"}
-              paddingLeft={"0"}
-              paddingX={"10"}
-              rightIcon={
-                <Image alt="chevron icon" src={ChevronDownIcon} transform={"rotate(90deg)"} />
-              }
-            >
-              <Text
-                color="neutrals.600"
-                fontSize={{desktop: "text.Dl1", mobile: "text.Ml1"}}
-                fontWeight={600}
-              >
-                All products
-              </Text>
-            </MenuButton>
-            <MenuList>
-              <MenuItem
-                onClick={() => {
-                  sortProducts(undefined);
-                }}
-              >
-                All products
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  sortProducts("category", "Gaming");
-                }}
-              >
-                Gaming
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  sortProducts("category", "Audio");
-                }}
-              >
-                Audio
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  sortProducts("category", "Smart Home");
-                }}
-              >
-                Smart Home
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  sortProducts("category", "Monitors & TV");
-                }}
-              >
-                Monitors & TV
-              </MenuItem>
-            </MenuList>
-          </>
-        )}
-      </Menu>
+
+      <Select
+        bg="white"
+        border={"1px solid #DAE4F2"}
+        borderRadius={"1rem"}
+        color="neutrals.600"
+        fontSize={{desktop: "text.Dl1", mobile: "text.Ml1"}}
+        fontWeight={600}
+        minH={"50px"}
+        minW={"200px"}
+        paddingLeft={"0"}
+        placeholder="Select option"
+        onChange={(e) => {
+          SetSort(e.target.value);
+        }}
+      >
+        <option value="All products">All products</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Audio">Audio</option>
+        <option value="Smart Home">Smart Home</option>
+        <option value="Monitors & TV"> Monitors & TV</option>
+      </Select>
     </Flex>
   );
 }

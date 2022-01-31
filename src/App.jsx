@@ -25,11 +25,19 @@ function App() {
     })();
   }, []);
   const sortProducts = async (type, category) => {
-    let array = [...products];
+    if (category) {
+      let array = [...products];
 
-    let sortedProducts = await sortArray(array, type, category);
+      let sortedProducts = await sortArray(array, type, category);
 
-    await SetSort(sortedProducts);
+      await SetSort(sortedProducts);
+    } else {
+      let array = [...sort];
+
+      let sortedProducts = await sortArray(array, type);
+
+      await SetSort(sortedProducts);
+    }
 
     return false;
   };
