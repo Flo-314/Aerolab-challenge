@@ -27,7 +27,7 @@ function Card({_id, category, cost, img, name, user, handleSellProducts}) {
     // eslint-disable-next-line no-unused-vars
     const checkIsRedeemAble = (() => {
       if (user && cost) {
-        let userPoints = user.points;
+        const userPoints = user.points;
 
         if (userPoints > cost) {
           SetIsRedeemable(true);

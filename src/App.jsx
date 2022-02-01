@@ -17,8 +17,8 @@ function App() {
   useEffect(() => {
     // eslint-disable-next-line no-unused-vars
     const getData = (async () => {
-      let products = await fetchApi("products");
-      let user = await fetchApi("user", "me");
+      const products = await fetchApi("products");
+      const user = await fetchApi("user", "me");
       const page1 = products.slice(0, 16);
 
       setUser(user);
@@ -30,21 +30,21 @@ function App() {
   const sortProducts = async (type, category) => {
     //all the product shows only the page products
     if (type === undefined) {
-      let array = [...productsPage];
+      const array = [...productsPage];
 
       await SetSort(array);
     } //for category sorts all the products
     else if (category) {
-      let array = [...products];
+      const array = [...products];
 
-      let sortedProducts = await sortArray(array, type, category);
+      const sortedProducts = await sortArray(array, type, category);
 
       await SetSort(sortedProducts);
     } //for price sorts only the SortedProducts
     else {
-      let array = [...sort];
+      const array = [...sort];
 
-      let sortedProducts = await sortArray(array, type);
+      const sortedProducts = await sortArray(array, type);
 
       await SetSort(sortedProducts);
     }
@@ -60,7 +60,7 @@ function App() {
       };
 
       body = JSON.stringify(body);
-      let request = await fetchApi("user", "points", "POST", body);
+      const request = await fetchApi("user", "points", "POST", body);
     }
     setUser({...user, points: user.points + quantity});
 
@@ -73,14 +73,14 @@ function App() {
     };
 
     body = JSON.stringify(body);
-    let response = await fetchApi("redeem", undefined, "post", body);
+    const response = await fetchApi("redeem", undefined, "post", body);
 
     handlePoints(price * -1);
 
     return false;
   };
   const handleMovePage = (page) => {
-    let newProducts = [...products];
+    const newProducts = [...products];
 
     if (page === 1) {
       const products = newProducts.slice(0, 16);

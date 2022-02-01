@@ -101,6 +101,7 @@ function LandingSection() {
                 <Image
                   alt="hero logo"
                   height="auto"
+                  position={{desktop: "absolute", svg: "absolute", svga: "static"}}
                   src={heroDesktop}
                   transform={{desktop: "scale(1.3,1.4)"}}
                   transformOrigin={{desktop: "50% 100%"}}

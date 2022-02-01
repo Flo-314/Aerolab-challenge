@@ -1,6 +1,6 @@
 import {Box, Container, Flex, Grid, GridItem, Image, Text} from "@chakra-ui/react";
 
-function Card({image, icon, title, content, mobileContent}) {
+function Card({image, icon, title, content}) {
   return (
     <Box
       bg={{desktop: "white", mobile: "rgba(255, 255, 255, 0.7)"}}

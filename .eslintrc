@@ -27,6 +27,7 @@
     "react/prop-types": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
+    "prefer-const":"warn",
     "prettier/prettier": [
       "warn",
       {

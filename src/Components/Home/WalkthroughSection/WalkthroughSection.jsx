@@ -1,4 +1,4 @@
-import {Flex, Box, Image, Text, Button, Grid, GridItem, Heading, Container} from "@chakra-ui/react";
+import {Box, Image, Grid, GridItem} from "@chakra-ui/react";
 
 import iconC1 from "../../../Styling/UI Assets/assets/icons/walkthrough-1.svg";
 import iconC2 from "../../../Styling/UI Assets/assets/icons/walkthrough-2.svg";
