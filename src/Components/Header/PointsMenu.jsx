@@ -11,7 +11,7 @@ function PointsMenu({user, handlePoints}) {
   const [selectedPoints, SetSelectedPoints] = useState(1000);
   const toast = useToast({
     position: "bottom-left",
-    title: selectedPoints + "  Added successfully",
+    title: selectedPoints + " AeroPoints Added successfully",
     status: "success",
     duration: 3500,
     isClosable: true,
