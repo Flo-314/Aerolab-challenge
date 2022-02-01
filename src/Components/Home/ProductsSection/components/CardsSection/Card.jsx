@@ -76,6 +76,7 @@ function Card({_id, category, cost, img, name, user, handleSellProducts}) {
       </Grid>
       {isRedeemAble ? (
         <Button
+          _hover={{backgrund: "none", opacity: "0.7"}}
           bg="brand.default"
           color="white"
           isLoading={isLoading}

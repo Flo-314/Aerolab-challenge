@@ -1,6 +1,7 @@
 import {Flex, Box, Image, Text, Button} from "@chakra-ui/react";
 import {useState} from "react";
 import {Menu, MenuButton, MenuList, MenuGroup, MenuDivider} from "@chakra-ui/react";
+import {useToast} from "@chakra-ui/react";
 
 import aeroPay from "../../Styling/UI Assets/assets/icons/aeropay-1.svg";
 import CardAeroPay from "../../Styling/UI Assets/assets/icons/aeropay-2.svg";
@@ -8,6 +9,19 @@ import chevronIcon from "../../Styling/UI Assets/assets/icons/chevron-default.sv
 
 function PointsMenu({user, handlePoints}) {
   const [selectedPoints, SetSelectedPoints] = useState(1000);
+  const toast = useToast({
+    position: "bottom-left",
+    title: selectedPoints + "  Added successfully",
+    status: "success",
+    duration: 3500,
+    isClosable: true,
+    containerStyle: {
+      width: {desktop: "800px", mobile: "150px"},
+      maxWidth: "80%",
+      marginLeft: "2em",
+      marginBottom: "2em",
+    },
+  });
 
   return (
     <Flex
@@ -79,6 +93,7 @@ function PointsMenu({user, handlePoints}) {
           <Flex align="center" direction={"column"} justifyContent={"center"} paddingY={3}>
             <Flex align="center" gap={5} justifyContent={"center"}>
               <Button
+                _hover={{backgrund: "none", opacity: "0.7"}}
                 bg={selectedPoints === 1000 ? "brand.default" : "#E5F0FF"}
                 borderRadius={15}
                 color={"neutrals.100"}
@@ -94,6 +109,7 @@ function PointsMenu({user, handlePoints}) {
                 </Text>
               </Button>
               <Button
+                _hover={{backgrund: "none", opacity: "0.7"}}
                 bg={selectedPoints === 5000 ? "brand.default" : "#E5F0FF"}
                 borderRadius={15}
                 color={"neutrals.100"}
@@ -109,6 +125,7 @@ function PointsMenu({user, handlePoints}) {
                 </Text>
               </Button>
               <Button
+                _hover={{backgrund: "none", opacity: "0.7"}}
                 bg={selectedPoints === 7500 ? "brand.default" : "#E5F0FF"}
                 borderRadius={15}
                 color={"neutrals.100"}
@@ -125,12 +142,14 @@ function PointsMenu({user, handlePoints}) {
               </Button>
             </Flex>
             <Button
+              _hover={{backgrund: "none", opacity: "0.7"}}
               bg="brand.default"
               borderRadius={15}
               marginTop={5}
               width="100%"
-              onClick={() => {
-                handlePoints(selectedPoints, "add");
+              onClick={async () => {
+                await handlePoints(selectedPoints, "add");
+                toast();
               }}
             >
               <Text color="white">Add points</Text>{" "}
